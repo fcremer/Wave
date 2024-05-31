@@ -4,10 +4,20 @@
 <main class="site-main gh-inner">
 
     <div class="post-feed gh-feed">
+    {{!-- Information Posts --}}
+    {{#get "posts" filter="tags:information"}}
+        <h2>Information Posts</h2>
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
-    </div>
+    {{/get}}
 
+    {{!-- News Posts --}}
+    {{#get "posts" filter="tags:news"}}
+        <h2>News Posts</h2>
+        {{#foreach posts}}
+            {{> "loop"}}
+        {{/foreach}}
+    {{/get}}
 </main>
 </div>
